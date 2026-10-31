@@ -1,0 +1,53 @@
+name: Пересчёт трек-рекорда
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'forecasts/**'
+      - 'scripts/**'
+      - '.github/workflows/score.yml'
+  schedule:
+    # раз в сутки: чтобы просроченные прогнозы вылезали в README сами,
+    # без моего участия
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: score
+  cancel-in-progress: false
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Тесты скоринга
+        run: python tests/test_score.py
+
+      - name: Пересчитать счёт
+        run: python scripts/score.py
+
+      - name: Заархивировать источники в Wayback
+        continue-on-error: true
+        run: python scripts/archive.py
+
+      - name: Закоммитить, если что-то изменилось
+        run: |
+          if [ -z "$(git status --porcelain README.md docs/)" ]; then
+            echo "изменений нет"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md docs/
+          git commit -m "chore: пересчёт счёта и калибровки"
+          git push

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420" font-family="system-ui, sans-serif" font-size="11">
+<rect width="420" height="420" fill="#ffffff"/>
+<line x1="50.0" y1="50" x2="50.0" y2="370" stroke="#eeeeee"/>
+<line x1="50" y1="370.0" x2="370" y2="370.0" stroke="#eeeeee"/>
+<text x="50.0" y="386" text-anchor="middle" fill="#666666">0%</text>
+<text x="42" y="374.0" text-anchor="end" fill="#666666">0%</text>
+<line x1="130.0" y1="50" x2="130.0" y2="370" stroke="#eeeeee"/>
+<line x1="50" y1="290.0" x2="370" y2="290.0" stroke="#eeeeee"/>
+<text x="130.0" y="386" text-anchor="middle" fill="#666666">25%</text>
+<text x="42" y="294.0" text-anchor="end" fill="#666666">25%</text>
+<line x1="210.0" y1="50" x2="210.0" y2="370" stroke="#eeeeee"/>
+<line x1="50" y1="210.0" x2="370" y2="210.0" stroke="#eeeeee"/>
+<text x="210.0" y="386" text-anchor="middle" fill="#666666">50%</text>
+<text x="42" y="214.0" text-anchor="end" fill="#666666">50%</text>
+<line x1="290.0" y1="50" x2="290.0" y2="370" stroke="#eeeeee"/>
+<line x1="50" y1="130.0" x2="370" y2="130.0" stroke="#eeeeee"/>
+<text x="290.0" y="386" text-anchor="middle" fill="#666666">75%</text>
+<text x="42" y="134.0" text-anchor="end" fill="#666666">75%</text>
+<line x1="370.0" y1="50" x2="370.0" y2="370" stroke="#eeeeee"/>
+<line x1="50" y1="50.0" x2="370" y2="50.0" stroke="#eeeeee"/>
+<text x="370.0" y="386" text-anchor="middle" fill="#666666">100%</text>
+<text x="42" y="54.0" text-anchor="end" fill="#666666">100%</text>
+<line x1="50.0" y1="370.0" x2="370.0" y2="50.0" stroke="#bbbbbb" stroke-dasharray="4 4"/>
+<rect x="50" y="50" width="320" height="320" fill="none" stroke="#333333"/>
+<text x="210.0" y="210.0" text-anchor="middle" fill="#999999">нет разрешённых прогнозов</text>
+<text x="210.0" y="410" text-anchor="middle" fill="#333333">сказанная вероятность</text>
+<text x="14" y="210.0" text-anchor="middle" fill="#333333" transform="rotate(-90 14 210.0)">доля сбывшихся</text>
+<text x="210.0" y="26" text-anchor="middle" fill="#111111" font-size="13">Кривая калибровки</text>
+</svg>
